@@ -5,18 +5,21 @@ import {Form} from "semantic-ui-react";
 import './App.css';
 
 function App() {
-  const [movieData, setMovieData] = useState([]);
+  const [movieData, setMovieData] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
   const [movieNomination, setMovieNomination] = useState([]);
 
   const handleChange = (e) => {
-    const title = e.target.value;
+    let title = e.target.value;
     console.log(title)
-    setMovieTitle(title);
+    if (title.length >= 3){
+      setMovieTitle(title);
+      console.log(movieTitle);
+    }
   };
 
   useEffect(() => {
-    const movieUrl = `https://www.omdbapi.com/?t=${movieTitle}&apikey=98e3fb1f`;
+    const movieUrl = `https://www.omdbapi.com/?s=${movieTitle}&apikey=98e3fb1f`;
     fetch(movieUrl)
       .then((res) => res.json())
       .then((data) => {
