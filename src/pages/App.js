@@ -17,13 +17,13 @@ function App() {
   }
 
   useEffect(() => {
-    if (movieTitle.length >= 3){
+    if (movieTitle.length >= 4){
       const movieUrl = `https://www.omdbapi.com/?s=${movieTitle}&apikey=98e3fb1f`;
       fetch(movieUrl)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          setMovieData(data);
+          setMovieData(data)
         });
     }
   }, [movieTitle]);
