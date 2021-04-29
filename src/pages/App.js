@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../components/APIResults/APIResults';
-import { Form } from "semantic-ui-react";
+import { Form, Grid, Divider, Segment, Header, Icon } from "semantic-ui-react";
 
 import './App.css';
 
@@ -8,6 +8,16 @@ function App() {
   const [movieData, setMovieData] = useState("");
   const [searchText, setSearchText] = useState("");
   const [movieNomination, setMovieNomination] = useState([]);
+
+  const addNomination = (nomination) => {
+    setMovieNomination([...movieNomination, nomination]);
+    console.log(movieNomination)
+  };
+
+  const removeNomination = (index) => {
+    const nominationArray = movieNomination.filter((d, i) => i !== index);
+    setMovieNomination(nominationArray)
+  }
 
   const handleChange = (e) => {
     let search = e.target.value;
@@ -18,7 +28,7 @@ function App() {
 
 
   useEffect(() => {
-    if ((searchText.length <= 10) && (searchText.length >=3)){
+    if ((searchText.length <= 10) && (searchText.length >= 3)) {
       const movieUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=98e3fb1f`;
       console.log(movieUrl);
       fetch(movieUrl)
@@ -33,16 +43,36 @@ function App() {
         });
     }
   }, [searchText]);
-  
+
   return (
     <div className="App">
-      <Form>
-            <Form.Field>
-                <label>Search Movies</label>
-                <input onChange={handleChange}/>
-            </Form.Field>
-        </Form>
-      {movieData ? <APIResults movie={movieData} /> : null}
+      <Header as='h2'>
+        <Icon name='trophy'/>
+        <Header.Content>
+          The Shoppies!
+          <Header.Subheader>Nominate your top 5 here!</Header.Subheader>
+        </Header.Content>
+      </Header>
+      <Segment placeholder>
+        <Grid columns={2} >
+          <Grid.Column>
+            <Form >
+              <Form.Input
+                label='Search Movies:'
+                placeholder='Movie title'
+                width={6}
+                onChange={handleChange}
+              />
+            </Form>
+            <br/>
+            {movieData ? <APIResults movie={movieData} addNomination={addNomination}/> : null}
+          </Grid.Column>
+          <Grid.Column >
+            <Header as='h4'>Nominations:</Header>
+          </Grid.Column>
+        </Grid>
+        <Divider vertical>-</Divider>
+      </Segment>
     </div>
   );
 }

@@ -1,29 +1,71 @@
 import React from "react";
 import { Card, Image, Feed, Button, Icon } from 'semantic-ui-react'
 
-function APIResults({ movie }) {
+function APIResults({ movie, addNomination }) {
 
     return (
-        <Card>
-            <Card.Content>
-                <Card.Header>Movie search results:</Card.Header>
-            </Card.Content>
-            <Card.Content>
-                <Feed>
-                    <Feed.Event>
-                        <Image src={movie.Search[0].Poster} size='small' floated='left' />
-                        <Feed.Content>
-                            {movie.Search[0].Title}
-                            {movie.Search[0].Year}
-                            <Button>
-                                <Icon name='video'/>
-                                Nominate
-                            </Button>
-                        </Feed.Content>
-                    </Feed.Event>
-                </Feed>
-            </Card.Content>
-        </Card>
+        <Card.Group itemsPerRow={3}>
+            <Card>
+                <Card.Content>
+                <Image src={movie.Search[0].Poster} height={220} width={180} />
+                    <Card.Header>{movie.Search[0].Title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{movie.Search[0].Year}</span>
+                    </Card.Meta>
+                    <Button content='Nominate' icon='video' onClick={addNomination}/>
+                </Card.Content>
+            </Card>
+            <Card>
+                <Card.Content>
+                <Image src={movie.Search[1].Poster} height={220} width={180} />
+                    <Card.Header>{movie.Search[1].Title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{movie.Search[1].Year}</span>
+                    </Card.Meta>
+                    <Button content='Nominate' icon='video' onClick={addNomination}/>
+                </Card.Content>
+            </Card>
+            <Card>
+                <Card.Content>
+                <Image src={movie.Search[2].Poster} height={220} width={180} />
+                    <Card.Header>{movie.Search[2].Title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{movie.Search[2].Year}</span>
+                    </Card.Meta>
+                    <Button content='Nominate' icon='video' onClick={addNomination}/>
+                </Card.Content>
+            </Card>
+            <Card>
+                <Card.Content>
+                <Image src={movie.Search[3].Poster} height={220} width={180} />
+                    <Card.Header>{movie.Search[3].Title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{movie.Search[3].Year}</span>
+                    </Card.Meta>
+                    <Button content='Nominate' icon='video' onClick={addNomination}/>
+                </Card.Content>
+            </Card>
+            <Card>
+                <Card.Content>
+                <Image src={movie.Search[4].Poster} height={220} width={180} />
+                    <Card.Header>{movie.Search[4].Title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{movie.Search[4].Year}</span>
+                    </Card.Meta>
+                    <Button content='Nominate' icon='video' onClick={addNomination}/>
+                </Card.Content>
+            </Card>
+            <Card>
+                <Card.Content>
+                <Image src={movie.Search[5].Poster} height={220} width={180} />
+                    <Card.Header>{movie.Search[5].Title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{movie.Search[5].Year}</span>
+                    </Card.Meta>
+                    <Button content='Nominate' icon='video' onClick={addNomination}/>
+                </Card.Content>
+            </Card>
+        </Card.Group>
     );
 }
 
