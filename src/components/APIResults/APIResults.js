@@ -1,17 +1,29 @@
 import React from "react";
-import {List} from 'semantic-ui-react';
+import { Card, Image, Feed, Button, Icon } from 'semantic-ui-react'
 
 function APIResults({ movie }) {
-    
-    return (
-        <List>
-            <List.Item icon='video'>{movie.Search[0].Title} ({movie.Search[0].Year})</List.Item>
-            <List.Item icon='video'>{movie.Search[1].Title} ({movie.Search[1].Year})</List.Item>
-            <List.Item icon='video'>{movie.Search[2].Title} ({movie.Search[2].Year})</List.Item>
-            <List.Item icon='video'>{movie.Search[3].Title} ({movie.Search[3].Year})</List.Item>
-            <List.Item icon='video'>{movie.Search[4].Title} ({movie.Search[4].Year})</List.Item>
 
-        </List>
+    return (
+        <Card>
+            <Card.Content>
+                <Card.Header>Movie search results:</Card.Header>
+            </Card.Content>
+            <Card.Content>
+                <Feed>
+                    <Feed.Event>
+                        <Image src={movie.Search[0].Poster} size='small' floated='left' />
+                        <Feed.Content>
+                            {movie.Search[0].Title}
+                            {movie.Search[0].Year}
+                            <Button>
+                                <Icon name='video'/>
+                                Nominate
+                            </Button>
+                        </Feed.Content>
+                    </Feed.Event>
+                </Feed>
+            </Card.Content>
+        </Card>
     );
 }
 
