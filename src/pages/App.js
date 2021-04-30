@@ -10,13 +10,11 @@ function App() {
   const [movieNomination, setMovieNomination] = useState([]);
 
   const addNomination = (nomination) => {
-    setMovieNomination([...movieNomination, nomination]);
-    console.log(movieNomination)
+    
   };
 
   const removeNomination = (index) => {
-    const nominationArray = movieNomination.filter((d, i) => i !== index);
-    setMovieNomination(nominationArray)
+    
   }
 
   const handleChange = (e) => {
@@ -29,7 +27,7 @@ function App() {
 
   useEffect(() => {
     if ((searchText.length <= 10) && (searchText.length >= 3)) {
-      const movieUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=98e3fb1f`;
+      const movieUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=98e3fb1f`.replace(/ /g, "%20");
       console.log(movieUrl);
       fetch(movieUrl)
         .then((res) => res.json())
@@ -50,7 +48,7 @@ function App() {
         <Icon name='trophy'/>
         <Header.Content>
           The Shoppies!
-          <Header.Subheader>Nominate your top 5 here!</Header.Subheader>
+          <Header.Subheader>Nominate your top 5 films!</Header.Subheader>
         </Header.Content>
       </Header>
       <Segment placeholder>
