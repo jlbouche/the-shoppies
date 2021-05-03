@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, Image, Feed, Button, Icon, Container } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 function APIResults({ movie, addNomination }) {
 
-    let movies = movie.Search.map((d, i) => {
+    let top6= movie.Search.slice(0,6)
+    let movies = top6.map((d, i) => {
 
         return (
-          <Card.Group itemsPerRow={3}>
               <Card>
                   <Card.Content>
                       <Image src={d.Poster} height={220} width={280} />
@@ -16,15 +16,14 @@ function APIResults({ movie, addNomination }) {
                       </Card.Meta>
                   </Card.Content>
               </Card>
-          </Card.Group>
         );
       });
 
     return (
 
-        <div className='APIresults'>
+        <Card.Group itemsPerRow={3}>
             {movies}
-        </div>
+        </Card.Group>
 
     );
 }
