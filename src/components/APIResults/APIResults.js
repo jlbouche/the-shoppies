@@ -3,6 +3,7 @@ import { Card, Image, Feed, Button, Icon } from 'semantic-ui-react'
 
 function APIResults({ movie, addNomination }) {
 
+
     return (
         <Card.Group itemsPerRow={3}>
             <Card>
@@ -15,6 +16,7 @@ function APIResults({ movie, addNomination }) {
                     <Button content='Nominate' icon='video' onClick={addNomination}/>
                 </Card.Content>
             </Card>
+            {movie.Search[1] ? 
             <Card>
                 <Card.Content>
                 <Image src={movie.Search[1].Poster} height={220} width={180} />
@@ -24,7 +26,8 @@ function APIResults({ movie, addNomination }) {
                     </Card.Meta>
                     <Button content='Nominate' icon='video' onClick={addNomination}/>
                 </Card.Content>
-            </Card>
+            </Card> : null }
+            {movie.Search[2] ?
             <Card>
                 <Card.Content>
                 <Image src={movie.Search[2].Poster} height={220} width={180} />
@@ -34,7 +37,8 @@ function APIResults({ movie, addNomination }) {
                     </Card.Meta>
                     <Button content='Nominate' icon='video' onClick={addNomination}/>
                 </Card.Content>
-            </Card>
+            </Card>: null }
+            {movie.Search[3] ?
             <Card>
                 <Card.Content>
                 <Image src={movie.Search[3].Poster} height={220} width={180} />
@@ -44,7 +48,8 @@ function APIResults({ movie, addNomination }) {
                     </Card.Meta>
                     <Button content='Nominate' icon='video' onClick={addNomination}/>
                 </Card.Content>
-            </Card>
+            </Card>: null }
+            {movie.Search[4] ?
             <Card>
                 <Card.Content>
                 <Image src={movie.Search[4].Poster} height={220} width={180} />
@@ -54,7 +59,8 @@ function APIResults({ movie, addNomination }) {
                     </Card.Meta>
                     <Button content='Nominate' icon='video' onClick={addNomination}/>
                 </Card.Content>
-            </Card>
+            </Card> : null }
+            {movie.Search[5] ?
             <Card>
                 <Card.Content>
                 <Image src={movie.Search[5].Poster} height={220} width={180} />
@@ -64,7 +70,7 @@ function APIResults({ movie, addNomination }) {
                     </Card.Meta>
                     <Button content='Nominate' icon='video' onClick={addNomination}/>
                 </Card.Content>
-            </Card>
+            </Card> : null }
         </Card.Group>
     );
 }

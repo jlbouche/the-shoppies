@@ -44,10 +44,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header as='h2'>
+      <Header as='h2' icon textAlign='center'>
         <Icon name='trophy'/>
         <Header.Content>
-          The Shoppies!
+          The Shoppies
           <Header.Subheader>Nominate your top 5 films!</Header.Subheader>
         </Header.Content>
       </Header>
