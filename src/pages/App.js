@@ -10,6 +10,7 @@ function App() {
   const [movieNomination, setMovieNomination] = useState([]);
 
   const addNomination = (nomination) => {
+    const nominationUrl = `https://www.omdbapi.com/?t=${nomination}&apikey=98e3fb1f`
     
   };
 
@@ -26,7 +27,7 @@ function App() {
 
 
   useEffect(() => {
-    if ((searchText.length <= 10) && (searchText.length >= 3)) {
+    if (searchText.length >= 3) {
       const movieUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=98e3fb1f`.replace(/ /g, "%20");
       console.log(movieUrl);
       fetch(movieUrl)

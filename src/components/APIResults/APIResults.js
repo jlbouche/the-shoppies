@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Image, Feed, Button, Icon, Container } from 'semantic-ui-react'
 
-function APIResults({ movie, addNomination, searchText }) {
+function APIResults({ movie, addNomination }) {
 
 
     return (
+
         <Card.Group itemsPerRow={3}>
             <Card>
                 <Card.Content>
