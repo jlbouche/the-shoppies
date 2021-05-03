@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../components/APIResults/APIResults';
+import MovieNominations from '../components/MovieNominations/MovieNominations'
 import { Form, Grid, Divider, Segment, Header, Icon, Container } from "semantic-ui-react";
 
 import './App.css';
@@ -10,12 +11,13 @@ function App() {
   const [movieNomination, setMovieNomination] = useState([]);
 
   const addNomination = (nomination) => {
-    const nominationUrl = `https://www.omdbapi.com/?t=${nomination}&apikey=98e3fb1f`
-    
+    setMovieNomination([...movieNomination, nomination]);
+    console.log(movieNomination)
   };
 
   const removeNomination = (index) => {
-    
+    const movieNominationArray = movieNomination.filter((d, i) => i !== index);
+    setMovieNomination(movieNominationArray);
   }
 
   const handleChange = (e) => {
@@ -71,6 +73,7 @@ function App() {
           </Grid.Column>
           <Grid.Column >
             <Header as='h4'>Nominations:</Header>
+            <MovieNominations movieNomination={movieNomination} removeNomination={removeNomination}/>
           </Grid.Column>
         </Grid>
         <Divider vertical>-</Divider>

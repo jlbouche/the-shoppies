@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 import { Card, Image, Button } from 'semantic-ui-react'
 
-function APIResults({ movie, addNomination }) {
+function MovieNominations({movieNomination, removeNomination}) {
 
-    let top6= movie.Search.slice(0,6)
-    let movies = top6.map((d, i) => {
+    let nominatedMovies = movieNomination.map((d, i) => {
 
         return (
               <Card>
@@ -14,7 +13,7 @@ function APIResults({ movie, addNomination }) {
                       <Card.Meta>
                           <span className='date'>{d.Year}</span>
                       </Card.Meta>
-                      <Button content="Nominate" icon="video" key={i} onClick={() => addNomination(d)}/>
+                      <Button content="Remove nomination" icon="video" key={i} onClick={() => removeNomination(d)}/>
                   </Card.Content>
               </Card>
         );
@@ -23,10 +22,11 @@ function APIResults({ movie, addNomination }) {
     return (
 
         <Card.Group itemsPerRow={3}>
-            {movies}
+            {nominatedMovies}
         </Card.Group>
 
     );
+    
 }
 
-export default APIResults;
+export default MovieNominations;
