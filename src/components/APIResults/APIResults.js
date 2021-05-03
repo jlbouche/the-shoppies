@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, Image, Feed, Button, Icon } from 'semantic-ui-react'
+import { Card, Image, Feed, Button, Icon, Container } from 'semantic-ui-react'
 
-function APIResults({ movie, addNomination }) {
+function APIResults({ movie, addNomination, searchText }) {
 
 
     return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../components/APIResults/APIResults';
-import { Form, Grid, Divider, Segment, Header, Icon } from "semantic-ui-react";
+import { Form, Grid, Divider, Segment, Header, Icon, Container } from "semantic-ui-react";
 
 import './App.css';
 
@@ -63,7 +63,10 @@ function App() {
               />
             </Form>
             <br/>
-            {movieData ? <APIResults movie={movieData} addNomination={addNomination}/> : null}
+            {movieData ? 
+              <APIResults movie={movieData} addNomination={addNomination}/> 
+            : searchText ? <Container>Sorry, no results for {searchText}</Container>
+            : null}
           </Grid.Column>
           <Grid.Column >
             <Header as='h4'>Nominations:</Header>
