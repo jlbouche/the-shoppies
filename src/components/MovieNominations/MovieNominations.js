@@ -13,7 +13,7 @@ function MovieNominations({movieNomination, removeNomination}) {
                       <Card.Meta>
                           <span className='date'>{d.Year}</span>
                       </Card.Meta>
-                      <Button content="Remove nomination" icon="video" key={i} onClick={() => removeNomination(d)}/>
+                      <Button content="Remove nomination" icon="video" key={i} onClick={() => removeNomination(i)}/>
                   </Card.Content>
               </Card>
         );
