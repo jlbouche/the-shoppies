@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../components/APIResults/APIResults';
 import MovieNominations from '../components/MovieNominations/MovieNominations';
-import { Form, Grid, Divider, Segment, Header, Icon, Container } from "semantic-ui-react";
+import { Form, Grid, Divider, Segment, Header, Icon, Container, Image } from "semantic-ui-react";
 
 import './App.css';
 
@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <Segment>
       <Header as='h2' icon textAlign='center'>
         <Icon name='trophy'/>
         <Header.Content>
@@ -56,6 +57,19 @@ function App() {
           <Header.Subheader>Nominate your top 5 films!</Header.Subheader>
         </Header.Content>
       </Header>
+      {(movieNomination.length===5) ? 
+        <Header as='h2' textAlign='right'>
+          <Header.Content>
+            <Image src='' size='small' floated='right'/>
+            Thanks for your nominations! Stay tuned for final results.
+          </Header.Content>
+        </Header>
+      : (movieNomination.length < 5) ?
+        <Header as='h3' textAlign='right'>
+          You have nominated {movieNomination.length} movies. Total needed: 5
+        </Header>
+      : null}
+      </Segment>
       <Segment placeholder>
         <Grid columns={2} >
           <Grid.Column>
@@ -75,12 +89,6 @@ function App() {
           </Grid.Column>
           <Grid.Column >
             <Header as='h2'>Nominations:</Header>
-            {(movieNomination.length===5) ? 
-              <Container>Thanks for your nominations!</Container>
-            : (movieNomination.length < 5) ?
-              <Container>You have nominated {movieNomination.length} movies. Total needed: 5</Container>
-            : null}
-            <br />
             <MovieNominations movieNomination={movieNomination} removeNomination={removeNomination}/>
           </Grid.Column>
         </Grid>
