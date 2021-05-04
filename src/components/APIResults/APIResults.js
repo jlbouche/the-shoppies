@@ -5,19 +5,22 @@ function APIResults({ movie, addNomination, movieNomination }) {
 
 
     let top6= movie.Search.slice(0,6)
+    let nominatedMovies = movieNomination
     let movies = top6.map((d, i) => {
 
         return (
-              <Card raised>
+              <Card >
                   <Card.Content>
-                      <Image src={d.Poster} />
+                      <Image src={d.Poster} rounded/>
                       <Card.Header>{d.Title}</Card.Header>
                       <Card.Meta>
                           <span className='date'>{d.Year}</span>
                       </Card.Meta>
+                      {nominatedMovies.includes(d) ? null : 
                       <Button content="Nominate" icon="video" key={i} 
                         onClick={() => addNomination(d)}
                         />
+                      }
                   </Card.Content>
               </Card>
         );

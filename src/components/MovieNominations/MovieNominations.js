@@ -6,9 +6,9 @@ function MovieNominations({movieNomination, removeNomination}) {
     let nominatedMovies = movieNomination.map((d, i) => {
 
         return (
-              <Card >
+              <Card>
                   <Card.Content>
-                      <Image src={d.Poster} />
+                      <Image src={d.Poster} rounded/>
                       <Card.Header>{d.Title}</Card.Header>
                       <Card.Meta>
                           <span className='date'>{d.Year}</span>

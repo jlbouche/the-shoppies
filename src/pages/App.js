@@ -69,17 +69,18 @@ function App() {
             </Form>
             <br/>
             {movieData ? 
-              <APIResults movie={movieData} addNomination={addNomination}/> 
+              <APIResults movie={movieData} addNomination={addNomination} movieNomination={movieNomination}/> 
             : searchText ? <Container>Sorry, no results for {searchText}</Container>
             : null}
           </Grid.Column>
           <Grid.Column >
-            <Header as='h4'>Nominations:</Header>
+            <Header as='h2'>Nominations:</Header>
             {(movieNomination.length===5) ? 
               <Container>Thanks for your nominations!</Container>
             : (movieNomination.length < 5) ?
               <Container>You have nominated {movieNomination.length} movies. Total needed: 5</Container>
             : null}
+            <br />
             <MovieNominations movieNomination={movieNomination} removeNomination={removeNomination}/>
           </Grid.Column>
         </Grid>
