@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../components/APIResults/APIResults';
-import MovieNominations from '../components/MovieNominations/MovieNominations'
-import { Form, Grid, Divider, Segment, Header, Icon, Container } from "semantic-ui-react";
+import MovieNominations from '../components/MovieNominations/MovieNominations';
+import Modals from '../components/Modals/Modals'
+import { Form, Grid, Divider, Segment, Header, Icon, Container, Modal } from "semantic-ui-react";
 
 import './App.css';
 
@@ -76,6 +77,7 @@ function App() {
             <MovieNominations movieNomination={movieNomination} removeNomination={removeNomination}/>
           </Grid.Column>
         </Grid>
+        
         <Divider vertical>-</Divider>
       </Segment>
     </div>
