@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../components/APIResults/APIResults';
 import MovieNominations from '../components/MovieNominations/MovieNominations';
-import Modals from '../components/Modals/Modals'
-import { Form, Grid, Divider, Segment, Header, Icon, Container, Modal } from "semantic-ui-react";
+import { Form, Grid, Divider, Segment, Header, Icon, Container } from "semantic-ui-react";
 
 import './App.css';
 
@@ -12,7 +11,9 @@ function App() {
   const [movieNomination, setMovieNomination] = useState([]);
 
   const addNomination = (nomination) => {
-    setMovieNomination([...movieNomination, nomination]);
+    if (movieNomination.length < 5) {
+      setMovieNomination([...movieNomination, nomination]);
+    }
     console.log(movieNomination)
   };
 
@@ -74,10 +75,14 @@ function App() {
           </Grid.Column>
           <Grid.Column >
             <Header as='h4'>Nominations:</Header>
+            {(movieNomination.length===5) ? 
+              <Container>Thanks for your nominations!</Container>
+            : (movieNomination.length < 5) ?
+              <Container>You have nominated {movieNomination.length} movies. Total needed: 5</Container>
+            : null}
             <MovieNominations movieNomination={movieNomination} removeNomination={removeNomination}/>
           </Grid.Column>
         </Grid>
-        
         <Divider vertical>-</Divider>
       </Segment>
     </div>
