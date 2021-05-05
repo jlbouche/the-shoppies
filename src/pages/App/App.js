@@ -14,14 +14,14 @@ function App() {
   
 
   return (
-    <div className="App">
+    
+    <> 
       <Menu inverted size='huge'>
         <Menu.Item as={Link} to='/'><Icon name='home'/>Home</Menu.Item>
         <Menu.Item as={Link} to='/about'><Icon name='question'/>About</Menu.Item>
         <Menu.Item as={Link} to='/vote'><Icon name='search plus'/>Search/Vote</Menu.Item>
         <Menu.Item as={Link} to='/credits' position='right'><Icon name='hand point right'/>Credits</Menu.Item>
       </Menu>
-      <Container>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route 
@@ -36,8 +36,7 @@ function App() {
             render={() => <Credits />}
           />
         </Switch>
-      </Container>
-    </div>
+        </>
   );
 }
 

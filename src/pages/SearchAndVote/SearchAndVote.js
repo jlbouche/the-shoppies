@@ -48,7 +48,7 @@ function SearchAndVote() {
 
   return (
     <div className="App">
-      <Segment>
+      <Segment size='large'>
       <Header as='h2' floated='left'>
         <Icon name='trophy'/>
         <Header.Content>
@@ -57,11 +57,8 @@ function SearchAndVote() {
         </Header.Content>
       </Header>
       {(movieNomination.length===5) ? 
-        <Header as='h2' floated='right'>
-          <Header.Content>
-            <Image src='' size='small' floated='right'/>
+        <Header as='h3' textAlign='right'>
             Thanks for your nominations! Stay tuned for final results.
-          </Header.Content>
         </Header>
       : (movieNomination.length < 5) ?
         <Header as='h3' textAlign='right'>
@@ -70,7 +67,7 @@ function SearchAndVote() {
       : null}
       </Segment>
       <Segment placeholder>
-        <Grid columns={2}>
+        <Grid columns={2} stackable>
           <Grid.Column>
             <Form >
               <Form.Input

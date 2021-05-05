@@ -5,9 +5,7 @@ import { Image, Header, Button } from 'semantic-ui-react'
 function Home() {
 
     return (
-        
-        <Button as={Link} to='/vote'>Hey</Button>
-
+        <Image src='https://i.imgur.com/4brPa9e.jpg' fluid/>
     )
 }
 
