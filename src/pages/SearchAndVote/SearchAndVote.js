@@ -48,7 +48,7 @@ function SearchAndVote() {
 
   return (
     <div className="App">
-      <Segment size='large'>
+      <Segment size='large' color='yellow'>
       <Header as='h2' floated='left'>
         <Icon name='trophy'/>
         <Header.Content>
@@ -66,7 +66,7 @@ function SearchAndVote() {
         </Header>
       : null}
       </Segment>
-      <Segment placeholder>
+      <Segment placeholder color='red'>
         <Grid columns={2} stackable>
           <Grid.Column>
             <Form >

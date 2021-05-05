@@ -9,14 +9,15 @@ function APIResults({ movie, addNomination, movieNomination }) {
     let movies = top6.map((d, i) => {
 
         return (
-              <Card >
+              <Card centered>
+                <Image src={d.Poster} rounded/>
                   <Card.Content>
-                      <Image src={d.Poster} rounded/>
                       <Card.Header>{d.Title}</Card.Header>
                       <Card.Meta>
                           <span className='date'>{d.Year}</span>
                       </Card.Meta>
-                      {nominatedMovies.includes(d) ? null : 
+                      {nominatedMovies.includes(d) ? null 
+                      : nominatedMovies.length===5 ? null : 
                       <Button content="Nominate" icon="video" key={i} 
                         onClick={() => addNomination(d)}
                         />
