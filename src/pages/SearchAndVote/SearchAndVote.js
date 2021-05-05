@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import APIResults from '../components/APIResults/APIResults';
-import MovieNominations from '../components/MovieNominations/MovieNominations';
+import APIResults from '../../components/APIResults/APIResults';
+import MovieNominations from '../../components/MovieNominations/MovieNominations';
 import { Form, Grid, Divider, Segment, Header, Icon, Container, Image } from "semantic-ui-react";
 
-import './App.css';
 
-function App() {
+function SearchAndVote() {
   const [movieData, setMovieData] = useState("");
   const [searchText, setSearchText] = useState("");
   const [movieNomination, setMovieNomination] = useState([]);
@@ -50,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <Segment>
-      <Header as='h2' icon textAlign='center'>
+      <Header as='h2' floated='left'>
         <Icon name='trophy'/>
         <Header.Content>
           The Shoppies
@@ -58,7 +57,7 @@ function App() {
         </Header.Content>
       </Header>
       {(movieNomination.length===5) ? 
-        <Header as='h2' textAlign='right'>
+        <Header as='h2' floated='right'>
           <Header.Content>
             <Image src='' size='small' floated='right'/>
             Thanks for your nominations! Stay tuned for final results.
@@ -98,4 +97,4 @@ function App() {
   );
 }
 
-export default App;
+export default SearchAndVote;
