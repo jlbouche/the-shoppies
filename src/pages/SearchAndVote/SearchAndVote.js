@@ -70,7 +70,7 @@ function SearchAndVote() {
       : null}
       </Segment>
       <Segment placeholder>
-        <Grid columns={2} >
+        <Grid columns={2}>
           <Grid.Column>
             <Form >
               <Form.Input
