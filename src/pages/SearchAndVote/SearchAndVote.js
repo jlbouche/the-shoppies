@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import APIResults from '../../components/APIResults/APIResults';
 import MovieNominations from '../../components/MovieNominations/MovieNominations';
-import { Form, Grid, Divider, Segment, Header, Icon, Container, Image } from "semantic-ui-react";
+import { Route, Link, Redirect, Switch } from 'react-router-dom'
+import { Menu, Form, Grid, Divider, Segment, Header, Icon, Container, Image } from "semantic-ui-react";
 
 
 function SearchAndVote() {
@@ -48,6 +49,11 @@ function SearchAndVote() {
 
   return (
     <div className="App">
+    <Menu inverted size='huge'>
+        <Menu.Item as={Link} to='/'><Icon name='home'/>Home</Menu.Item>
+        <Menu.Item as={Link} to='/vote'><Icon name='search plus'/>Search/Vote</Menu.Item>
+        <Menu.Item as={Link} to='/credits' position='right'><Icon name='hand point right'/>Credits</Menu.Item>
+    </Menu>
       <Segment size='large' color='yellow'>
       <Header as='h2' floated='left'>
         <Icon name='trophy'/>
