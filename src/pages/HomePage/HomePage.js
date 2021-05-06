@@ -23,8 +23,7 @@ function Home() {
                 We're collecting votes from movie lovers around the world as to which movies are
                 truly the best of the best. Users can
                 search through our extensive movie database for your favorite films,
-                nominate them, tell friends, andtuned for the final
-                results on The Shoppies!
+                nominate them, and stay tuned for the final results on The Shoppies!
                 </p>
             </Modal.Description>
             </Modal.Content>
