@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import APIResults from '../../components/APIResults/APIResults';
 import MovieNominations from '../../components/MovieNominations/MovieNominations';
 import { Route, Link, Redirect, Switch } from 'react-router-dom'
-import { Menu, Form, Grid, Divider, Segment, Header, Icon, Container, Image, Modal } from "semantic-ui-react";
+import { Menu, Form, Grid, Divider, Segment, Header, Icon, Container, Image, Modal, Button } from "semantic-ui-react";
 
 
 function SearchAndVote() {
@@ -66,7 +66,27 @@ function SearchAndVote() {
         <Header as='h3' textAlign='right'>
           You have nominated {movieNomination.length} movies. Total needed: 5
         </Header>
-      : <Header></Header>}
+      : 
+      <Modal trigger={<Button color='green'>Thanks for voting!</Button>} dimmer='blurring'>
+        <Modal.Header>Thanks for your submission!</Modal.Header>
+        <Modal.Content image>
+            <Image src='https://media0.giphy.com/media/l1Lc1Kn9hImgpx5Re/giphy.gif'/>
+            <Modal.Description>
+                <Header>We have recorded your votes</Header>
+                <p>Please stay tuned for The Shoppies to reveal final results, coming soon!</p>
+            </Modal.Description>
+        </Modal.Content>
+        <Modal.Actions>
+            <Button
+                as={Link} to='/'
+                content="Back to homepage"
+                labelPosition='right'
+                icon='video'
+                color='blue'
+            />
+            </Modal.Actions>
+      </Modal>
+    }
       </Segment>
       <Segment placeholder color='red' padded>
         <Grid columns={2} stackable>

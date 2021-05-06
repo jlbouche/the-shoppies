@@ -12,6 +12,7 @@ function Home() {
                     fluid
                 />
             }
+            dimmer='blurring'
         >
             <Modal.Header>Welcome to The Shoppies!</Modal.Header>
             <Modal.Content image>
