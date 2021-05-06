@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import APIResults from '../../components/APIResults/APIResults';
 import MovieNominations from '../../components/MovieNominations/MovieNominations';
 import { Route, Link, Redirect, Switch } from 'react-router-dom'
-import { Menu, Form, Grid, Divider, Segment, Header, Icon, Container, Image } from "semantic-ui-react";
+import { Menu, Form, Grid, Divider, Segment, Header, Icon, Container, Image, Modal } from "semantic-ui-react";
 
 
 function SearchAndVote() {
@@ -54,7 +54,7 @@ function SearchAndVote() {
         <Menu.Item as={Link} to='/vote'><Icon name='search plus'/>Search/Vote</Menu.Item>
         <Menu.Item as={Link} to='/credits' position='right'><Icon name='hand point right'/>Credits</Menu.Item>
     </Menu>
-      <Segment size='large' color='yellow'>
+      <Segment size='large' color='yellow' padded>
       <Header as='h2' floated='left'>
         <Icon name='trophy'/>
         <Header.Content>
@@ -62,17 +62,13 @@ function SearchAndVote() {
           <Header.Subheader>Nominate your top 5 films!</Header.Subheader>
         </Header.Content>
       </Header>
-      {(movieNomination.length===5) ? 
-        <Header as='h3' textAlign='right'>
-            Thanks for your nominations! Stay tuned for final results.
-        </Header>
-      : (movieNomination.length < 5) ?
+      {(movieNomination.length < 5) ?
         <Header as='h3' textAlign='right'>
           You have nominated {movieNomination.length} movies. Total needed: 5
         </Header>
-      : null}
+      : <Header></Header>}
       </Segment>
-      <Segment placeholder color='red'>
+      <Segment placeholder color='red' padded>
         <Grid columns={2} stackable>
           <Grid.Column>
             <Form >

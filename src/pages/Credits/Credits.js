@@ -49,7 +49,7 @@ function Credits(){
         </Menu>
         <Segment vertical>
             <Image centered src='https://i.imgur.com/WKDkoXP.gif?noredirect'/>
-            <Header inverted textAlign='center'>Just kidding...I also had the help of:</Header>
+            <Header inverted textAlign='center'>Just kidding... I also had help from:</Header>
         </Segment>
         <Segment vertical>
         <Card.Group stackable centered>
