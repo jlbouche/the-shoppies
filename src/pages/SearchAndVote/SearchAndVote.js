@@ -77,8 +77,8 @@ function SearchAndVote() {
         </Modal.Content>
         <Modal.Actions>
             <Button
-                as={Link} to='/'
-                content="Back to homepage"
+                as={Link} to='/credits'
+                content="Credits"
                 labelPosition='right'
                 icon='video'
                 color='blue'

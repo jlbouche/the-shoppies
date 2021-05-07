@@ -48,7 +48,7 @@ function Credits(){
             <Menu.Item as={Link} to='/credits' position='right'><Icon name='hand point right'/>Credits</Menu.Item>
         </Menu>
         <Segment vertical>
-            <Image centered src='https://i.imgur.com/WKDkoXP.gif?noredirect'/>
+            <Image centered rounded src='https://i.imgur.com/WKDkoXP.gif?noredirect'/>
             <Header inverted textAlign='center'>Just kidding... I also had help from:</Header>
         </Segment>
         <Segment vertical>

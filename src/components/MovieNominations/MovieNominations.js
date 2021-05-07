@@ -8,7 +8,10 @@ function MovieNominations({movieNomination, removeNomination}) {
 
         return (
               <Card centered >
-                <Image src={d.Poster} rounded />
+                {d.Poster==='N/A' ?
+                    <Image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5_u6G-llwL_q6X0VotcnOlk3UX7wHyRHEFw&usqp=CAU' rounded/>:
+                    <Image src={d.Poster} rounded/>
+                }
                   <Card.Content>
                       <Card.Header>{d.Title}</Card.Header>
                       <Card.Meta>
