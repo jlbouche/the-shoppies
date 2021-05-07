@@ -5,7 +5,9 @@ function APIResults({ movie, addNomination, movieNomination }) {
 
 
     let top6= movie.Search.slice(0,6)
-    let nominatedMovies = movieNomination
+    let nominatedMovies = movieNomination.map((d, i) => {
+      return (d.Title)
+    })
     let movies = top6.map((d, i) => {
 
         return (
@@ -16,7 +18,7 @@ function APIResults({ movie, addNomination, movieNomination }) {
                       <Card.Meta>
                           <span className='date'>{d.Year}</span>
                       </Card.Meta>
-                      {nominatedMovies.includes(d) ? null 
+                      {nominatedMovies.includes(d.Title) ? null 
                       : nominatedMovies.length===5 ? null : 
                       <Button content="Nominate" icon="video" key={i} 
                         onClick={() => addNomination(d)}

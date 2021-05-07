@@ -6,7 +6,7 @@ import { Menu, Form, Grid, Divider, Segment, Header, Icon, Container, Image, Mod
 
 
 function SearchAndVote() {
-  const [movieData, setMovieData] = useState("");
+  const [movieSearchData, setMovieSearchData] = useState("");
   const [searchText, setSearchText] = useState("");
   const [movieNomination, setMovieNomination] = useState([]);
 
@@ -14,34 +14,33 @@ function SearchAndVote() {
     if (movieNomination.length < 5) {
       setMovieNomination([...movieNomination, nomination]);
     }
-    console.log(movieNomination)
   };
 
   const removeNomination = (index) => {
     const movieNominationArray = movieNomination.filter((d, i) => i !== index);
     setMovieNomination(movieNominationArray);
+    console.log('this is the removeNomination movieNominationArray: ' + movieNominationArray)
   }
 
   const handleChange = (e) => {
     let search = e.target.value;
-    console.log(search)
+    console.log('this is the search from input: ' + search)
     setSearchText(search);
-    console.log(searchText);
   }
 
 
   useEffect(() => {
     if (searchText.length >= 3) {
-      const movieUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=98e3fb1f`.replace(/ /g, "%20");
-      console.log(movieUrl);
-      fetch(movieUrl)
+      const movieSearchUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=98e3fb1f`.replace(/ /g, "%20");
+      console.log(movieSearchUrl);
+      fetch(movieSearchUrl)
         .then((res) => res.json())
         .then((data) => {
           if (data.Response === "True") {
-            setMovieData(data)
+            setMovieSearchData(data)
           }
           else {
-            setMovieData(null);
+            setMovieSearchData(null);
           }
         });
     }
@@ -64,7 +63,7 @@ function SearchAndVote() {
       </Header>
       {(movieNomination.length < 5) ?
         <Header as='h3' textAlign='right'>
-          You have nominated {movieNomination.length} movies. Total needed: 5
+          You have nominated {movieNomination.length} of 5 movies.
         </Header>
       : 
       <Modal trigger={<Button color='green'>Thanks for voting!</Button>} dimmer='blurring'>
@@ -100,8 +99,8 @@ function SearchAndVote() {
               />
             </Form>
             <br/>
-            {movieData ? 
-              <APIResults movie={movieData} addNomination={addNomination} movieNomination={movieNomination}/> 
+            {movieSearchData ? 
+              <APIResults movie={movieSearchData} addNomination={addNomination} movieNomination={movieNomination}/> 
             : searchText ? <Container>Sorry, no results for {searchText}</Container>
             : null}
           </Grid.Column>

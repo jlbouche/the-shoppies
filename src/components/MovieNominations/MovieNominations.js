@@ -3,6 +3,7 @@ import { Card, Image, Button, Container } from 'semantic-ui-react'
 
 function MovieNominations({movieNomination, removeNomination}) {
 
+    
     let nominatedMovies = movieNomination.map((d, i) => {
 
         return (
