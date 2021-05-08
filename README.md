@@ -1,6 +1,6 @@
 # Welcome to The Shoppies!
 
-[Visit the live demo!]()
+[Visit the live demo!](https://jbouche-the-shoppies.netlify.app/)
 
 ## The Challenge
 
