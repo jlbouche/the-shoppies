@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Welcome to The Shoppies!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Visit the live demo!]()
 
-## Available Scripts
+## The Challenge
 
-In the project directory, you can run:
 
-### `npm start`
+<details>
+    <summary>UI Requirements</summary>
+    <ul>
+        <li>Search OMDB and display the results (movies only)</li>
+        <li>Add a movie from the search results to our nomination list
+        </li>
+        <li>View the list of films already nominated</li>
+        <li>Remove a nominee from the nomination list</li>
+    </ul>
+</details>
+<details>
+    <summary>Technical Requirements
+    </summary>
+    <ul>
+        <li>Search results should come from OMDB's API</li>
+        <li>Each search result should list at least its title, year of release and a button to nominate that film.</li>
+        <li>Updates to the search terms should update the result list
+        </li>
+        <li>Movies in search results can be added and removed from the nomination list.</li>
+        <li>If a search result has already been nominated, disable its nominate button.</li>
+        <li>Display a banner when the user has 5 nominations.</li>
+    </ul>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The Results:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Homepage:
 
-### `npm test`
+![picture](https://i.imgur.com/e5gQATX.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### About
 
-### `npm run build`
+![picture](https://i.imgur.com/fFVEGf8.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Search and Nominate (text updating)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![picture](https://i.imgur.com/X2GaZLz.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Search and Nominate (search found results, nomination/nominate button removed)
 
-### `npm run eject`
+![picture](https://i.imgur.com/kf7NFX5.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Button display on hitting 5 nominations
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![picture](https://i.imgur.com/TCqmuNx.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Credits (what's life without some humor)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![picture](https://i.imgur.com/FYoNapx.png)
